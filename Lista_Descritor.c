@@ -57,10 +57,12 @@ void insereFim(Descritor *l, int v){
         n->info = v;
         n->prox = NULL;
         l->ult->prox = n;
-        l->ult = n ;
         if(estaVazia(l)){
-           l->prim = n; 
-        }   
+            l->prim=n;
+        }else{
+            l->ult->prox = n;
+        }
+        l->ult = n ;
         l->n++;
     }else{
         printf("NÃO FOI POSSÍVEL ALOCAR ESPAÇO");
